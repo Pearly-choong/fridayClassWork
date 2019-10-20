@@ -81,3 +81,11 @@ document.getElementById('submit3').addEventListener('click', function(){
 
 
 // ============================= Algorithm 4 ======================
+
+var foods = ['pizza','ice-cream','sushi'];
+document.getElementById('add').addEventListener('click', function(){
+  var newFood = document.getElementById('textBox').value;
+  foods.push(newFood);
+document.getElementById('result2').innerHTML = "new food has been added";
+document.getElementById('result2').innerHTML += "<br>food array is now: " + foods;
+});
