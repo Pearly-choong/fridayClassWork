@@ -67,25 +67,38 @@ document.getElementById('submit2').addEventListener('click', function(){
 
 
 // ============================= Algorithm 3 ======================
-document.getElementById('submit3').addEventListener('click', function(){
-
-  var givenSentence = 'The good news is that everyone makes mistakes. All of the mistakes you make, have been made by others who started off just like you.';
-
-  document.getElementById('result').innerHTML = '</br> Given Sentence: </br>' + givenSentence;
-
-  var replacedSentence = givenSentence.replace(/mistakes/g, 'bugs');
-
-  document.getElementById('message').innerHTML = '</br> Replace sentence : </br>' + replacedSentence;
-
-});
-
-
-// ============================= Algorithm 4 ======================
-
 var foods = ['pizza','ice-cream','sushi'];
+
 document.getElementById('add').addEventListener('click', function(){
   var newFood = document.getElementById('textBox').value;
   foods.push(newFood);
-document.getElementById('result2').innerHTML = "new food has been added";
-document.getElementById('result2').innerHTML += "<br>food array is now: " + foods;
+document.getElementById('result2').innerHTML = '</br> new food has been added!';
+document.getElementById('result2').innerHTML += '<br>food array is now: ' + foods;
+});
+
+
+document.getElementById('delete').addEventListener('click', function(){
+var deleteFood = document.getElementById('textBox').value;
+
+for(var i = 0; i < foods.length; i++){
+  if(foods[i] === deleteFood){
+    foods.splice(i,1);
+    document.getElementById('result2').innerHTML = "<br>food has been deleted! ";
+    document.getElementById('result2').innerHTML += '<br>food array is now: ' + foods;
+    document.getElementById('texBox').innerHTML = '';
+  }
+}
+});
+
+
+document.getElementById('search').addEventListener('click', function(){
+var searchFood = document.getElementById('textBox').value;
+
+  for(var i=0; i < foods.length; i++){
+  if(foods[i] === searchFood) {
+    foods.search(i);
+    document.getElementById('result2').innerHTML += '<br>food found: ' + foods;
+    document.getElementById('texBox').innerHTML = '';
+    }
+  }
 });
